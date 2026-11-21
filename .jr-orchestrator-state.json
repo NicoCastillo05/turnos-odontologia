@@ -1,0 +1,118 @@
+{
+  "version": 1,
+  "step": "discovery",
+  "owner": "discovery-research",
+  "discovery": {
+    "created_by": "discovery-research",
+    "sources": [
+      "https://odonthia.com/blog/mejores-software-odontologicos-argentina-2026",
+      "https://bilog.com.ar",
+      "https://web.dentaltec.com.ar",
+      "https://dentalcore.app",
+      "https://odonthia.com",
+      "https://dentia.tech",
+      "https://dentalhub.com.ar",
+      "https://dentiqa.app/ar",
+      "https://www.denteo.com.ar",
+      "https://odonto.ar"
+    ],
+    "competitors": [
+      { "name": "Bilog", "notes_file": "docs/discovery/informe-discovery.md" },
+      { "name": "DentalTec", "notes_file": "docs/discovery/informe-discovery.md" },
+      { "name": "DentalCore", "notes_file": "docs/discovery/informe-discovery.md" },
+      { "name": "Odonthia", "notes_file": "docs/discovery/informe-discovery.md" },
+      { "name": "Dentia", "notes_file": "docs/discovery/informe-discovery.md" },
+      { "name": "DentalHub", "notes_file": "docs/discovery/informe-discovery.md" },
+      { "name": "Dentiqa", "notes_file": "docs/discovery/informe-discovery.md" },
+      { "name": "Denteo", "notes_file": "docs/discovery/informe-discovery.md" },
+      { "name": "Odonto.ar", "notes_file": "docs/discovery/informe-discovery.md" },
+      { "name": "DentalSoft", "notes_file": "docs/discovery/informe-discovery.md" },
+      { "name": "Orbita", "notes_file": "docs/discovery/informe-discovery.md" },
+      { "name": "AgendaPro", "notes_file": "docs/discovery/informe-discovery.md" },
+      { "name": "Dentalink", "notes_file": "docs/discovery/informe-discovery.md" },
+      { "name": "Doctocliq", "notes_file": "docs/discovery/informe-discovery.md" },
+      { "name": "Dentidesk", "notes_file": "docs/discovery/informe-discovery.md" },
+      { "name": "Clinic Cloud", "notes_file": "docs/discovery/informe-discovery.md" },
+      { "name": "Dendoo", "notes_file": "docs/discovery/informe-discovery.md" },
+      { "name": "Dentrix", "notes_file": "docs/discovery/informe-discovery.md" },
+      { "name": "Open Dental", "notes_file": "docs/discovery/informe-discovery.md" }
+    ],
+    "problema": "Los consultorios y clínicas odontológicas argentinas coordinan turnos por WhatsApp/teléfono/papel, generando dobles reservas, ausentismo, pérdida de tiempo y pérdida de pacientes. Los sistemas existentes se enfocan en obras sociales/facturación y dejan de lado UX moderna, automatización y precio en pesos.",
+    "usuarios": [
+      "Paciente",
+      "Odontólogo/profesional",
+      "Recepcionista/secretaria",
+      "Administrador/owner de clínica",
+      "Laboratorio dental (etapa posterior)"
+    ],
+    "casos_de_uso": [
+      "Reservar turno online 24/7 eligiendo profesional y horario",
+      "Ver agenda del día/semana de todos los profesionales y sillones sin solapamientos",
+      "Enviar recordatorios automáticos por WhatsApp para reducir ausencias",
+      "Registrar cobros, emitir comprobantes y ver reportes de ocupación e ingresos",
+      "Cancelar o reprogramar turno con anticipación mínima configurable"
+    ],
+    "funcionalidades_necesarias": [
+      "Agenda diaria/semanal por profesional y sillón, duración variable, anti-solape, bloqueos, sobreturnos controlados",
+      "Reserva online 24/7 por link con confirmación/cancelación/reprogramación",
+      "Ficha de paciente + odontograma FDI + anamnesis + adjuntos",
+      "Recordatorios automáticos WhatsApp y email",
+      "Caja: cobros, señas, saldos, Mercado Pago, reportes básicos",
+      "Multi-profesional con roles/permisos básicos",
+      "Exportación CSV/Excel",
+      "PWA mobile-first, precios en pesos, plan gratis o prueba sin tarjeta"
+    ],
+    "funcionalidades_opcionales": [
+      "Portal del paciente",
+      "Cumplimiento normativo AR documentado",
+      "Métricas de ausentismo con alertas de recuperación",
+      "Integración Google Calendar",
+      "Firma electrónica de consentimientos",
+      "Liquidación/validación de obras sociales en tiempo real",
+      "Facturación electrónica ARCA",
+      "IA (chatbot WhatsApp 24/7, dictado, análisis radiográfico)",
+      "Campañas de marketing y recaptación",
+      "Multi-sede avanzado y laboratorio dental",
+      "App nativa iOS/Android"
+    ],
+    "reglas_de_negocio": [
+      "No solapar dos turnos del mismo profesional/sillón",
+      "Duración del turno depende de la prestación",
+      "Cancelación con anticipación mínima configurable; fuera de plazo puede perderse la seña",
+      "Horarios de atención configurables por profesional y día",
+      "Sobreturnos solo con confirmación explícita",
+      "Bloqueos de agenda no asignables",
+      "Datos de salud sensibles: acceso restringido por rol (Ley 25.326)"
+    ],
+    "integraciones": [
+      "WhatsApp Business API",
+      "Mercado Pago",
+      "Email",
+      "Google Calendar (etapa posterior)",
+      "ARCA/AFIP (etapa posterior)",
+      "Exportación CSV/Excel"
+    ],
+    "restricciones": [
+      "Mercado argentino: precios en ARS, español, normativa local (Ley 26.529, 25.326, 25.506)",
+      "Presupuesto acotado (proyecto académico, equipo pequeño): SaaS nube sin instalación local",
+      "Mobile-first (mayoría reserva desde celular)",
+      "Sin dependencias de servicios pagos obligatorios para el MVP",
+      "Internet requerido (sin modo offline en v1)"
+    ],
+    "riesgos": [
+      "Supuesto sin probar: pacientes prefieren reservar online vs. seguir por WhatsApp por costumbre",
+      "Costo y complejidad de WhatsApp Business API (Meta factura por mensaje)",
+      "Competencia consolidada con foco en obras sociales; diferenciarse solo por UX puede no bastar",
+      "Cumplimiento normativo (Ley 26.529 inalterabilidad/conservación 10 años) si no se diseña desde el inicio",
+      "Adopción por profesionales acostumbrados a papel/WhatsApp"
+    ],
+    "preguntas_abiertas": [
+      "¿Soporte de obras sociales en MVP o etapa posterior?",
+      "¿App nativa o PWA?",
+      "¿Monetización: freemium con límites o prueba gratuita?",
+      "¿Multi-tenant SaaS o instancia por clínica?",
+      "¿Incluir laboratorio dental en roadmap o descartar?",
+      "¿Política de no-show y señas obligatorias?"
+    ]
+  }
+}
