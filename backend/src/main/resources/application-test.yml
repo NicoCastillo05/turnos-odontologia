@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:turnostest;DB_CLOSE_DELAY=-1
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+  h2:
+    console:
+      enabled: false
+
+app:
+  jwt:
+    secret: placeholder-solo-para-tests-no-produccion
+  whatsapp:
+    token: placeholder-solo-para-tests
+    phone-id: placeholder-solo-para-tests
+  mercadopago:
+    access-token: placeholder-solo-para-tests
+  smtp:
+    host: localhost
+    port: 2525
+    user: placeholder-solo-para-tests
+    pass: placeholder-solo-para-tests
