@@ -118,7 +118,7 @@ C-01 → C-02 → C-03 → C-04 → C-05 → C-06 → C-11 → C-13 → C-14*
 ## FASE 2 — Autenticación y autorización
 
 ### [C-03] `auth-y-rbac`
-- **Estado**: `[ ]` pendiente
+- **Estado**: `[x]` completado (2026-11-22, OPSX `auth-y-rbac`)
 - **Scope**:
   - JWT access + refresh tokens.
   - Endpoints: POST /api/auth/login, /register (alta de clínica), /refresh.
