@@ -87,7 +87,7 @@ C-01 → C-02 → C-03 → C-04 → C-05 → C-06 → C-11 → C-13 → C-14*
 ## FASE 1 — Infraestructura y modelo core
 
 ### [C-01] `scaffolding-y-configuracion`
-- **Estado**: `[ ]` pendiente
+- **Estado**: `[x]` completado (2026-11-21, OPSX `2026-11-21-scaffolding-y-configuracion`)
 - **Scope**:
   - Estructura de directorios backend/frontend según `08_arquitectura_propuesta.md`.
   - Configuración de variables de entorno (DATABASE_URL, JWT_SECRET, etc.).
@@ -334,6 +334,6 @@ C-01 → C-02 → C-03 → C-04 → C-05 → C-06 → C-11 → C-13 → C-14*
 | C-13 | reportes-y-exportacion | 8 | MEDIO | C-10, C-04 |
 | C-14 | pwa-y-responsive | 8 | MEDIO | C-07, C-05 |
 
-**Primer item elegible**: `C-01` (scaffolding-y-configuracion).
+**Primer item elegible**: `C-02` (core-models-y-migraciones).
 
 > Nota: se excluyen del MVP las funcionalidades diferidas (portal del paciente, Google Calendar, firma electrónica, liquidación OS, facturación ARCA, IA, campañas, multi-sede avanzado, laboratorio dental, app nativa) según Discovery sección D. La normativa AR avanzada se deja para v1.1.
