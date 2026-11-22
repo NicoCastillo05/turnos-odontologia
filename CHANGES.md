@@ -100,7 +100,7 @@ C-01 → C-02 → C-03 → C-04 → C-05 → C-06 → C-11 → C-13 → C-14*
   - `knowledge-base/08_arquitectura_propuesta.md` §Variables de entorno
 
 ### [C-02] `core-models-y-migraciones`
-- **Estado**: `[ ]` pendiente
+- **Estado**: `[x]` completado (2026-11-22, OPSX `2026-11-22-core-models-y-migraciones`)
 - **Scope**:
   - Modelos: Clinic, User, Professional, Chair, Service, Patient, Appointment, Block, Payment, Deposit, Attachment, Odontogram.
   - Migraciones numeradas (001 base, 002 agenda, 003 pacientes, 004 pagos).

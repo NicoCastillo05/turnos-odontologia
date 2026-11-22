@@ -48,4 +48,15 @@ El repositorio SHALL contener proyectos backend y frontend independientes, y el 
 
 #### Scenario: Tipado estricto del frontend
 - **WHEN** se compila el proyecto frontend
-- **THEN** la compilación de TypeScript no presenta errores de tipos y no se utilizan valores `any` implícitos o explícitos
+- **THEN** la compilación de TypeScript no presenta errores de tipos y no se utiliza ningún valor `any` implícito o explícito
+
+### Requirement: Esquema migrado y validado al arrancar
+El backend SHALL aplicar las migraciones Flyway antes de inicializar el mapa de entidades y SHALL validar que el esquema resultante coincida con las entidades.
+
+#### Scenario: Arranque con migraciones presentes
+- **WHEN** se inicia el backend con las migraciones V001 a V004 en el classpath
+- **THEN** Flyway las aplica en orden y Hibernate valida el esquema sin errores
+
+#### Scenario: Esquema fuera de sincronía
+- **WHEN** una entidad no coincide con el esquema migrado
+- **THEN** el arranque falla con un error de validación que identifica la diferencia
