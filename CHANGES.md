@@ -158,7 +158,11 @@ C-01 → C-02 → C-03 → C-04 → C-05 → C-06 → C-11 → C-13 → C-14*
   - `knowledge-base/07_flujos_principales.md` §Flujo 2
 
 ### [C-07] `frontend-agenda`
-- **Estado**: `[ ]` pendiente
+- **Estado**: `[x]` completado (2026-11-23, OPSX `frontend-decente`)
+- **Evidencia**:
+  - `openspec/changes/frontend-decente/` (proposal, specs, design, tasks)
+  - Frontend: login, agenda view, estilos globales, reserva pulida
+  - Verify: `tsc --noEmit` OK, `vite build` OK (43 módulos)
 - **Scope**:
   - Vistas día y semana por profesional y sillón.
   - Filtros por profesional/sillón.
