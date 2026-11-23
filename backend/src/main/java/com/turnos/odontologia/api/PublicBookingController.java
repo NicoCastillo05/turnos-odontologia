@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.*;
 import java.time.LocalDate;
 import java.util.List;
 
+import com.turnos.odontologia.api.dto.publicbooking.ClinicInfoResponse;
+
 @RestController
 @RequestMapping("/api/public/booking")
 public class PublicBookingController {
@@ -14,6 +16,11 @@ public class PublicBookingController {
 
     public PublicBookingController(BookingService bookingService) {
         this.bookingService = bookingService;
+    }
+
+    @GetMapping("/{slug}")
+    public ClinicInfoResponse clinicInfo(@PathVariable String slug) {
+        return bookingService.getClinicInfo(slug);
     }
 
     @GetMapping("/{slug}/slots")

@@ -1,5 +1,8 @@
 package com.turnos.odontologia.application.booking;
 
+import com.turnos.odontologia.api.dto.publicbooking.ClinicInfoResponse;
+import com.turnos.odontologia.api.dto.publicbooking.ClinicInfoResponse.ProfessionalInfo;
+import com.turnos.odontologia.api.dto.publicbooking.ClinicInfoResponse.ServiceInfo;
 import com.turnos.odontologia.application.agenda.ProfessionalScheduleCodec;
 import com.turnos.odontologia.application.agenda.TimeWindow;
 import com.turnos.odontologia.application.agenda.WeeklySchedule;
@@ -46,6 +49,22 @@ public class BookingService {
         this.appointmentRepository = appointmentRepository;
         this.blockRepository = blockRepository;
         this.scheduleCodec = scheduleCodec;
+    }
+
+    @org.springframework.transaction.annotation.Transactional(readOnly = true)
+    public ClinicInfoResponse getClinicInfo(String slug) {
+        Clinic clinic = clinicRepository.findBySlug(slug)
+                .orElseThrow(() -> new IllegalArgumentException("Clinica no encontrada"));
+        Long tenantId = clinic.getTenantId();
+        List<ProfessionalInfo> professionals = professionalRepository.findAllByTenantId(tenantId).stream()
+                .filter(Professional::isActive)
+                .map(p -> new ProfessionalInfo(p.getId(), p.getUser() != null ? p.getUser().getEmail() : "Profesional " + p.getId()))
+                .toList();
+        List<ServiceInfo> services = serviceRepository.findAllByTenantId(tenantId).stream()
+                .filter(com.turnos.odontologia.domain.Service::isActive)
+                .map(s -> new ServiceInfo(s.getId(), s.getName(), s.getDurationMinutes()))
+                .toList();
+        return new ClinicInfoResponse(clinic.getSlug(), clinic.getName(), professionals, services);
     }
 
     public List<String> availableSlots(String slug, Long professionalId, Long serviceId, LocalDate date) {

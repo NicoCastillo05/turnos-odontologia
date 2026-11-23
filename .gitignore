@@ -37,3 +37,8 @@ logs/
 
 # Enunciado (local reference only)
 desarrollo-active-stack Global.pdf
+
+# Seed data (dev only)
+backend/src/main/resources/db/seed_dev.sql
+# npm lock (regenerable)
+frontend/package-lock.json
