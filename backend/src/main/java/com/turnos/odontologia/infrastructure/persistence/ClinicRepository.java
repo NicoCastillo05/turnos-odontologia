@@ -11,4 +11,6 @@ public interface ClinicRepository extends JpaRepository<Clinic, Long> {
     List<Clinic> findAllByTenantId(Long tenantId);
 
     Optional<Clinic> findByIdAndTenantId(Long id, Long tenantId);
+
+    Optional<Clinic> findBySlug(String slug);
 }

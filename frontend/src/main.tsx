@@ -1,6 +1,8 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App';
+import BookingPage from './pages/BookingPage';
 import './index.css';
 
 const rootElement = document.getElementById('root');
@@ -11,6 +13,11 @@ if (rootElement === null) {
 
 createRoot(rootElement).render(
   <StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="/booking/:slug" element={<BookingPage />} />
+      </Routes>
+    </BrowserRouter>
   </StrictMode>,
 );

@@ -38,7 +38,7 @@ public class SecurityConfig {
             .csrf(csrf -> csrf.disable())
             .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authorizeHttpRequests(req -> req
-                .requestMatchers("/api/auth/**", "/h2-console/**").permitAll()
+                .requestMatchers("/api/auth/**", "/api/public/booking/**", "/h2-console/**").permitAll()
                 .anyRequest().authenticated())
             .exceptionHandling(errors -> errors.accessDeniedHandler((request, response, exception) -> {
                 response.setStatus(403);
