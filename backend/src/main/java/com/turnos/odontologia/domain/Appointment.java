@@ -1,12 +1,12 @@
 package com.turnos.odontologia.domain;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.Convert;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.Pattern;
 
 import java.time.LocalDateTime;
 
@@ -37,8 +37,15 @@ public class Appointment extends BaseEntity {
     private LocalDateTime endAt;
 
     @Column(name = "status", nullable = false, length = 20)
-    @Pattern(regexp = "^(scheduled|confirmed|cancelled|no_show|completed)$")
-    private String status;
+    @Convert(converter = AppointmentStatusConverter.class)
+    private AppointmentStatus status;
+
+    @Column(name = "overbooked", nullable = false)
+    private boolean overbooked;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "overbook_authorized_by_user_id")
+    private User overbookAuthorizedBy;
 
     @Column(name = "deposit_id")
     private Long depositId;
@@ -94,12 +101,28 @@ public class Appointment extends BaseEntity {
         this.endAt = endAt;
     }
 
-    public String getStatus() {
+    public AppointmentStatus getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(AppointmentStatus status) {
         this.status = status;
+    }
+
+    public boolean isOverbooked() {
+        return overbooked;
+    }
+
+    public void setOverbooked(boolean overbooked) {
+        this.overbooked = overbooked;
+    }
+
+    public User getOverbookAuthorizedBy() {
+        return overbookAuthorizedBy;
+    }
+
+    public void setOverbookAuthorizedBy(User overbookAuthorizedBy) {
+        this.overbookAuthorizedBy = overbookAuthorizedBy;
     }
 
     public Long getDepositId() {

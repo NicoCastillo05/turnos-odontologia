@@ -137,7 +137,11 @@ C-01 → C-02 → C-03 → C-04 → C-05 → C-06 → C-11 → C-13 → C-14*
 ## FASE 3 — Agenda y turnos
 
 ### [C-04] `agenda-backend`
-- **Estado**: `[ ]` pendiente
+- **Estado**: `[x]` completado y archivado (`2026-11-23-agenda-backend`)
+- **Evidencia**:
+  - `openspec/changes/archive/2026-11-23-agenda-backend/`
+  - `docs/evidence/C-04-agenda-backend.md`
+  - Verify independiente: PASS; suite final: 52 tests, 0 fallos.
 - **Scope**:
   - Endpoints CRUD de Appointment, Block, Professional, Chair, Service.
   - Validación anti-solapamiento (RN-AG-01, RN-AG-02, RN-AG-07).
