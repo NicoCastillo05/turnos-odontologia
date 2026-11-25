@@ -3,6 +3,33 @@
 Backend multi-tenant para la administración de clínicas odontológicas. El backend usa Java 17,
 Spring Boot 3, Spring Security, JPA, Flyway y H2.
 
+Proyecto del Trabajo Global Integrador: Discovery → fundación con Active Stack → ciclo OPSX sobre un change.
+
+## Stack
+
+- **Backend:** Java 17 o superior, Spring Boot 3.3.5, Maven, H2 embebida en modo archivo y Flyway para migraciones.
+- **Frontend:** React 18 + Vite + TypeScript con tipado estricto.
+- **Tests:** JUnit 5 y Spring Boot Test.
+
+## Estructura del repositorio
+
+| Ruta | Contenido |
+|---|---|
+| `backend/` | API y dominio (`domain/`, `application/`, `infrastructure/`, `api/`) |
+| `frontend/` | SPA (`features/`, `shared/`, `pages/`) |
+| `knowledge-base/` | Los 10 archivos canónicos (visión, actores, datos, reglas, flujos, etc.) |
+| `docs/` | Informe de Discovery |
+| `openspec/changes/` | Changes en curso, con `proposal.md`, `design.md`, `specs/` y `tasks.md` |
+| `openspec/changes/archive/` | Changes cerrados |
+| `openspec/specs/` | Specs oficiales del proyecto |
+| `CHANGES.md` | Roadmap de 14 changes, dependencias, gates y estado |
+| `AGENTS.md` / `CLAUDE.md` | Reglas del agente |
+| `TEAM_DISTRIBUTION.md` | Asignación de changes por integrante |
+
+## Configuración
+
+Copiar `.env.example` a `.env` y completar los valores que se necesiten. El repositorio **no contiene secretos reales**: todos los valores son placeholders o campos vacíos.
+
 ## C-04: agenda backend
 
 Todas las rutas internas requieren un access token JWT:
@@ -137,3 +164,26 @@ Validación estricta del cambio OpenSpec, desde la raíz:
 ```bash
 openspec validate agenda-backend --strict
 ```
+
+## Frontend
+
+```bash
+cd frontend
+npm install
+npm run dev        # http://localhost:5173
+npm run build      # typecheck + build de producción
+```
+
+## Ciclo OPSX
+
+Cada funcionalidad se especifica antes de implementarse: `explore → propose → apply → verify → archive`. Los artefactos de cada change viven en `openspec/changes/` y, al cerrarse, se mueven a `openspec/changes/archive/` junto con la actualización de `openspec/specs/`.
+
+El estado de cada change (pendiente o completado) se consulta en `CHANGES.md`.
+
+## Reglas del proyecto
+
+Ver `AGENTS.md`. Las principales: `tenant_id` en toda consulta, migraciones numeradas para cada cambio de esquema, datos de pacientes siempre ficticios y ningún secreto en el código.
+
+## Video de defensa
+
+[Ver video de defensa (8–12 min)](LINK_A_COMPLETAR)
