@@ -186,4 +186,4 @@ Ver `AGENTS.md`. Las principales: `tenant_id` en toda consulta, migraciones nume
 
 ## Video de defensa
 
-[Ver video de defensa (8–12 min)](LINK_A_COMPLETAR)
+[Ver video de defensa (8–12 min)](https://youtu.be/B-5p8ZLb5Ww)
